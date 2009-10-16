@@ -9,6 +9,13 @@ The major class name is ZipArchive, it’s easy to use, you can declare a instan
 
 = Details =
 
+Usage:
+Add all the files to you project, and and framework libz.1.2.3.dylib.
+
+include ZipArchive.h using #import "ZipArchive/ZipArchive.h" 
+
+
+
 To create and add files to a zip
 	
 {{{
