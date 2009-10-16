@@ -12,7 +12,7 @@ The major class name is ZipArchive, it’s easy to use, you can declare a instan
 Usage:
 Add all the files to you project, and and framework libz.1.2.3.dylib.
 
-include ZipArchive.h using #import "ZipArchive/ZipArchive.h" 
+include ZipArchive.h using {{{ #import "ZipArchive/ZipArchive.h" }}}
 
 
 
