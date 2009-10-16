@@ -13,10 +13,14 @@ To create and add files to a zip
 	
 {{{
 		BOOL ret = [zip CreateZipFile2:l_zipfile];
+		// OR
+		BOOL ret = [zip CreateZipFile2:l_zipfile Password:@"your password"]; //
+		//if the Password is empty, will get the same effect as [zip CreateZipFile2:l_zipfile];
+
 		ret = [zip addFileToZip:l_photo newname:@"photo.jpg"];
 		if( ![zip CloseZipFile2] )
 		{
-			l_zipfile = @"";
+			// error handler here
 		}
 		[zip release];
 
@@ -27,10 +31,14 @@ Extract files in a zip file to special directory, if the directory does not exis
 {{{
 	ZipArchive* za = [[ZipArchive alloc] init];
 	if( [za UnzipOpenFile:@"/Volumes/data/testfolder/Archive.zip"] )
+	// OR
+	if( [za UnzipOpenFile:@"/Volumes/data/testfolder/Archive.zip"] Password:@"password of the zip file"] )
+  // if the Password is empty, get same  effect as if( [za UnzipOpenFile:@"/Volumes/data/testfolder/Archive.zip"] )
 	{
 		BOOL ret = [za UnzipFileTo:@"/Volumes/data/testfolder/extract" overWrite:YES];
 		if( NO==ret )
 		{
+			// error handler here
 		}
 		[za UnzipCloseFile];
 	}
